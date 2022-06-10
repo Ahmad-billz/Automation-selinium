@@ -14,6 +14,15 @@ public class UpdatedDropdown {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise");
+		
+		System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+		driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).click();
+		System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+		
+		//count # of checkboxes
+		System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size() + "checkboxes");
+		
+		
 		driver.findElement(By.id("divpaxinfo")).click(); //adult dropdown
 		Thread.sleep(2000);
 		

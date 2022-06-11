@@ -16,12 +16,23 @@ public class UpdatedDropdown {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise");
 		
-//		System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+
 		Assert.assertFalse(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
 		
 		driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).click();
-//		System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
 		Assert.assertTrue(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+		
+		System.out.println(driver.findElement(By.id("Div1")).getAttribute("style"));
+		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();		
+		System.out.println(driver.findElement(By.id("Div1")).getAttribute("style"));
+		if(driver.findElement(By.id("Div1")).getAttribute("style").contains("1")) {
+			System.out.println("its eneabled");
+			Assert.assertTrue(true);
+		}
+		else
+		{Assert.assertTrue(false);}
+		
+		
 		
 		//count # of checkboxes
 		System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size() + " checkboxes");
@@ -42,7 +53,7 @@ public class UpdatedDropdown {
 		}
 		
 		driver.findElement(By.id("btnclosepaxoption")).click(); //done button
-		Assert.assertEquals(driver.findElement(By.id("divpaxinfo")).getText(), "5 Adults");
+		Assert.assertEquals(driver.findElement(By.id("divpaxinfo")).getText(), "4 Adult");
 		System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
 		
 	}

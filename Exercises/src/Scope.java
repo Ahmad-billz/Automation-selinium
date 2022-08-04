@@ -17,7 +17,7 @@ public class Scope {
 		ChromeOptions options = new ChromeOptions();
 		options.addExtensions(new File("C://Program Files/extension_4_3_6_0.crx"));
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(options);
 		driver.get("https://qaclickacademy.com/practice.php");
 
 		// count of links on page

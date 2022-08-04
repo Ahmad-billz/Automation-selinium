@@ -13,7 +13,7 @@ public class AutoSuggestive {
 		ChromeOptions opt = new ChromeOptions();
 		opt.addExtensions(new File("C://Program Files/extension_4_3_6_0.crx"));
 		
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(opt);
 		driver.manage().window().maximize();
 		driver.get("http://rahulshettyacademy.com/dropdownsPractise"); 
 		driver.findElement(By.id("autosuggest")).sendKeys("ind");
